@@ -21,20 +21,20 @@ curl -X POST -H 'Content-type: application/json' \
     Branch: ${TRAVIS_BRANCH}', 'channel': '${CHANNEL}'}" ${SLACK_ROOMS}
 
 FAILED_TESTS=$(ls -1q tests/_output/*.fail.png | wc -l)
-
+echo ${FAILED_TESTS}
 
 # send link to the report into slack chat room
-curl -X POST -H 'Content-type: application/json' --data "{
-    'attachments': [
-        {
-            'fallback': 'Failed test data',
-            'text': 'There are failed tests.
-             Test report: ${PREVIEW_LINK}/blob/${SCREENSHOT_COMMIT_HASH}/${PROJECT_FOLDER}/${GATEWAY}/${TODAY}/${REPORT_FILE} .
-             All screenshots can be found  ${REPO_LINK}/tree/${SCREENSHOT_COMMIT_HASH}/${PROJECT_FOLDER}/${GATEWAY}/${TODAY} .',
-            'color': '#764FA5'
-        }
-    ], 'channel': '${CHANNEL}'
-}"  ${SLACK_ROOMS};
+#curl -X POST -H 'Content-type: application/json' --data "{
+#    'attachments': [
+#        {
+#            'fallback': 'Failed test data',
+#            'text': 'There are failed tests.
+#             Test report: ${PREVIEW_LINK}/blob/${SCREENSHOT_COMMIT_HASH}/${PROJECT_FOLDER}/${GATEWAY}/${TODAY}/${REPORT_FILE} .
+#             All screenshots can be found  ${REPO_LINK}/tree/${SCREENSHOT_COMMIT_HASH}/${PROJECT_FOLDER}/${GATEWAY}/${TODAY} .',
+#            'color': '#764FA5'
+#        }
+#    ], 'channel': '${CHANNEL}'
+#}"  ${SLACK_ROOMS};
 
 
 
