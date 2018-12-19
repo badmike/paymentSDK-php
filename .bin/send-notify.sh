@@ -19,9 +19,9 @@ curl -X POST -H 'Content-type: application/json' \
     --data "{'text': 'Build Failed. Build URL : ${TRAVIS_JOB_WEB_URL}\n
     Build Number: ${TRAVIS_BUILD_NUMBER}\n
     Branch: ${TRAVIS_BRANCH}', 'channel': '${CHANNEL}'}" ${SLACK_ROOMS}
-
 FAILED_TESTS=$(ls -1q tests/_output/*.fail.png | wc -l)
-echo ${FAILED_TESTS}
+echo "FAILED TESTS: ${FAILED_TESTS}"
+ls -la tests/_output/
 
 # send link to the report into slack chat room
 #curl -X POST -H 'Content-type: application/json' --data "{
