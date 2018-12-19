@@ -15,10 +15,10 @@ elif [[  ${GATEWAY} = "SECURE-TEST-SG" ]]; then
 fi
 
 #send information about the build
-curl -X POST -H 'Content-type: application/json' \
-    --data "{'text': 'Build Failed. Build URL : ${TRAVIS_JOB_WEB_URL}\n
-    Build Number: ${TRAVIS_BUILD_NUMBER}\n
-    Branch: ${TRAVIS_BRANCH}', 'channel': '${CHANNEL}'}" ${SLACK_ROOMS}
+#curl -X POST -H 'Content-type: application/json' \
+#    --data "{'text': 'Build Failed. Build URL : ${TRAVIS_JOB_WEB_URL}\n
+#    Build Number: ${TRAVIS_BUILD_NUMBER}\n
+#    Branch: ${TRAVIS_BRANCH}', 'channel': '${CHANNEL}'}" ${SLACK_ROOMS}
 FAILED_TESTS=$(ls -1q tests/_output/*.fail.png | wc -l)
 echo "FAILED TESTS: ${FAILED_TESTS}"
 ls -la tests/_output/
