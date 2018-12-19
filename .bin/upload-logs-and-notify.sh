@@ -26,6 +26,7 @@ mkdir ${DATE_FOLDER}
 fi
 
 #copy report files
+ls tests/_output/
 cp tests/_output/*.html ${DATE_FOLDER}
 if [[ $1 == 'fail' ]]; then
     cp tests/_output/*.fail.png ${DATE_FOLDER}
