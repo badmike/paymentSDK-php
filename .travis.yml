@@ -46,6 +46,7 @@ matrix:
     env: GATEWAY=NOVA
     install:
     - travis_retry composer require --dev $COMPOSER_ARGS codeception/codeception
+    - travis_retry composer --dev $COMPOSER_ARGS require browserstack/browserstack-local
     - travis_retry composer install $COMPOSER_ARGS
     - composer show
     script: bash .bin/run-ui-tests.sh

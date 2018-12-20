@@ -26,8 +26,6 @@ php -S localhost:8080 > /dev/null &
 #    export NGROK_URL=$(curl -s localhost:4040/api/tunnels/command_line | jq --raw-output .public_url)
 #    sleep 1
 #done
-php composer.phar require browserstack/browserstack-local
-
 
 export NGROK_URL=localhost:8080
 GROUP='default_gateway'
