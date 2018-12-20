@@ -27,6 +27,12 @@ php -S localhost:8080 > /dev/null &
 #    sleep 1
 #done
 
+#get BrowserstackLocal
+curl -s https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip > browserstack-local.zip
+unzip browserstack-local.zip
+chmod +x $PWD/BrowserStackLocal
+
+./BrowserStackLocal --key ${BROWSERSTACK_ACCESS_KEY}
 export NGROK_URL=localhost:8080
 GROUP='default_gateway'
 
