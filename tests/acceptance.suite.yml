@@ -7,7 +7,9 @@
 actor: AcceptanceTester
 modules:
   enabled:
-    - WebDriver:
+    - \BrowserStackWebDriver
+    config:
+      \BrowserStackWebDriver:
         host: 'hub-cloud.browserstack.com'
         port: 80
         url: '%NGROK_URL%/examples'
