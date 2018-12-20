@@ -4,21 +4,18 @@
 # Perform tests in browser using the WebDriver or PhpBrowser.
 # If you need both WebDriver and PHPBrowser tests - create a separate suite.
 
-class_name: AcceptanceTester
-
+actor: AcceptanceTester
 modules:
   enabled:
-    - \BrowserStackWebDriver
-  config:
-    \BrowserStackWebDriver:
-      host: 'hub-cloud.browserstack.com'
-      port: 80
-      browser: chrome
-      url: '%NGROK_URL%/examples'
-      capabilities:
+    - \Helper\BrowserStackWebDriver:
+        host: 'hub-cloud.browserstack.com'
+        port: 80
+        url: 'localhost:8080/examples'
+        browser: chrome # 'chrome' or 'firefox'
+        capabilities:
           'build': '%VERSION%'
           'project': 'payment-SDK'
           'browserstack.user': '%BROWSERSTACK_USER%'
           'browserstack.key': '%BROWSERSTACK_ACCESS_KEY%'
           'browserstack.local': true
-  - \Helper\Acceptance
+    - \Helper\Acceptance

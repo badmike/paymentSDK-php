@@ -7,7 +7,7 @@
  */
 
 namespace Helper;
-require 'vendor/autoload.php';
+require '../../../vendor/autoload.php';
 
 class BrowserStackWebDriver extends \Codeception\Module\WebDriver
 {
