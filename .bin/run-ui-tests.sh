@@ -32,7 +32,7 @@ curl -s https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-
 unzip browserstack-local.zip
 chmod +x $PWD/BrowserStackLocal
 
-./BrowserStackLocal --key ${BROWSERSTACK_ACCESS_KEY}
+./BrowserStackLocal --key ${BROWSERSTACK_ACCESS_KEY} > /dev/null &
 export NGROK_URL=localhost:8080
 GROUP='default_gateway'
 
