@@ -33,7 +33,7 @@ unzip browserstack-local.zip
 chmod +x $PWD/BrowserStackLocal
 
 ./BrowserStackLocal --key ${BROWSERSTACK_ACCESS_KEY} --folder ${PWD}> /dev/null &
-export NGROK_URL=http://localhost:8080/examples/
+export NGROK_URL=http://localhost:8080
 GROUP='default_gateway'
 
 if [[ ${GATEWAY} = "TEST-SG" ]] || [[ ${GATEWAY} = "SECURE-TEST-SG" ]]; then
