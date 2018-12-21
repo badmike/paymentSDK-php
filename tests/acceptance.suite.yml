@@ -10,13 +10,15 @@ modules:
     - WebDriver:
         connection_timeout: 120
         request_timeout: 120
+        pageload_timeout: 120
         host: 'hub-cloud.browserstack.com'
         port: 80
-        url: '%NGROK_URL%/examples'
+         url: '%NGROK_URL%/examples'
         browser: chrome # 'chrome' or 'firefox'
         capabilities:
           'build': '%VERSION%'
           'project': 'payment-SDK'
           'browserstack.user': '%BROWSERSTACK_USER%'
           'browserstack.key': '%BROWSERSTACK_ACCESS_KEY%'
+          'browserstack.local': true
     - \Helper\Acceptance

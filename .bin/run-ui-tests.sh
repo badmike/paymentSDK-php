@@ -6,34 +6,34 @@ export VERSION=`cat VERSION`
 #start payment-sdk
 php -S localhost:8080 > /dev/null &
 
-# download and install ngrok
-curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > ngrok.zip
-unzip ngrok.zip
-chmod +x $PWD/ngrok
-# Download json parser for determining ngrok tunnel
-curl -sO http://stedolan.github.io/jq/download/linux64/jq
-chmod +x $PWD/jq
+## download and install ngrok
+#curl -s https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > ngrok.zip
+#unzip ngrok.zip
+#chmod +x $PWD/ngrok
+## Download json parser for determining ngrok tunnel
+#curl -sO http://stedolan.github.io/jq/download/linux64/jq
+#chmod +x $PWD/jq
+#
+## Open ngrok tunnel
+#$PWD/ngrok authtoken $NGROK_TOKEN
+#TIMESTAMP=$(date +%s)
+#$PWD/ngrok http 8080 -subdomain=${TIMESTAMP}${GATEWAY}> /dev/null &
+#
+#NGROK_URL=$(curl -s localhost:4040/api/tunnels/command_line | jq --raw-output .public_url)
+## allow ngrok to initialize
+#while [ ! ${NGROK_URL} ] || [ ${NGROK_URL} = 'null' ];  do
+#    echo "Waiting for ngrok to initialize"
+#    export NGROK_URL=$(curl -s localhost:4040/api/tunnels/command_line | jq --raw-output .public_url)
+#    sleep 1
+#done
 
-# Open ngrok tunnel
-$PWD/ngrok authtoken $NGROK_TOKEN
-TIMESTAMP=$(date +%s)
-$PWD/ngrok http 8080 -subdomain=${TIMESTAMP}${GATEWAY}> /dev/null &
+#get BrowserstackLocal
+curl -s https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip > browserstack-local.zip
+unzip browserstack-local.zip
+chmod +x $PWD/BrowserStackLocal
 
-NGROK_URL=$(curl -s localhost:4040/api/tunnels/command_line | jq --raw-output .public_url)
-# allow ngrok to initialize
-while [ ! ${NGROK_URL} ] || [ ${NGROK_URL} = 'null' ];  do
-    echo "Waiting for ngrok to initialize"
-    export NGROK_URL=$(curl -s localhost:4040/api/tunnels/command_line | jq --raw-output .public_url)
-    sleep 1
-done
-
-##get BrowserstackLocal
-#curl -s https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip > browserstack-local.zip
-#unzip browserstack-local.zip
-#chmod +x $PWD/BrowserStackLocal
-
-#./BrowserStackLocal --key ${BROWSERSTACK_ACCESS_KEY} > /dev/null &
-#export NGROK_URL=localhost:8080
+./BrowserStackLocal --key ${BROWSERSTACK_ACCESS_KEY} --folder ${PWD}> /dev/null &
+export NGROK_URL=http://localhost:8080/examples/
 GROUP='default_gateway'
 
 if [[ ${GATEWAY} = "TEST-SG" ]] || [[ ${GATEWAY} = "SECURE-TEST-SG" ]]; then
