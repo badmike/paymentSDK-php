@@ -20,20 +20,20 @@ Feature: check_credit_card_3DS_functionality_error_cards
     Examples:
       | credit_card_data                                | error_message |
       | "Auth Failed VISA Data"                         | "500.1076" |
-#      | "Auth Failed Mastercard Data"                   | "500.1076" |
-#      | "Auth Failed Maestro Data"                      | "500.1076" |
-#      | "Unable Auth VISA Data"                         | "201.0000" |
-#      | "Unable Auth Mastercard Data"                   | "201.0000" |
-#      | "Unable Auth Maestro Data"                      | "201.0000" |
-#      | "Auth Failed Sys Err VISA Data"                 | "201.0000" |
-#      | "Auth Failed Sys Err Mastercard Data"           | "201.0000" |
-#      | "Auth Failed Sys Err Maestro Data"              | "201.0000" |
-#      | "Card Holder Not Participating VISA Data"       | "500.1072" |
-#      | "Card Holder Not Participating Mastercard Data" | "500.1072" |
-#      | "Card Holder Not Participating Maestro Data"    | "500.1072" |
-#      | "Unable Verify Enrollment VISA Data"            | "500.1073" |
-#      | "Unable Verify Enrollment Mastercard Data"      | "500.1073" |
-#      | "Unable Verify Enrollment Maestro Data"         | "500.1073" |
-#      | "Sys Err Prevent Enrollment VISA Data"          | "500.1074" |
-#      | "Sys Err Prevent Enrollment Mastercard Data"    | "500.1074" |
-#      | "Sys Err Prevent Enrollment Maestro Data"       | "500.1074" |
+      | "Auth Failed Mastercard Data"                   | "500.1076" |
+      | "Auth Failed Maestro Data"                      | "500.1076" |
+      | "Unable Auth VISA Data"                         | "201.0000" |
+      | "Unable Auth Mastercard Data"                   | "201.0000" |
+      | "Unable Auth Maestro Data"                      | "201.0000" |
+      | "Auth Failed Sys Err VISA Data"                 | "201.0000" |
+      | "Auth Failed Sys Err Mastercard Data"           | "201.0000" |
+      | "Auth Failed Sys Err Maestro Data"              | "201.0000" |
+      | "Card Holder Not Participating VISA Data"       | "500.1072" |
+      | "Card Holder Not Participating Mastercard Data" | "500.1072" |
+      | "Card Holder Not Participating Maestro Data"    | "500.1072" |
+      | "Unable Verify Enrollment VISA Data"            | "500.1073" |
+      | "Unable Verify Enrollment Mastercard Data"      | "500.1073" |
+      | "Unable Verify Enrollment Maestro Data"         | "500.1073" |
+      | "Sys Err Prevent Enrollment VISA Data"          | "500.1074" |
+      | "Sys Err Prevent Enrollment Mastercard Data"    | "500.1074" |
+      | "Sys Err Prevent Enrollment Maestro Data"       | "500.1074" |
